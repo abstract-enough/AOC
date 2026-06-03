@@ -1,11 +1,12 @@
 import cv2
 import imageio
+import math
 
 file_name = "cardinal.mp4"
 
 cap = cv2.VideoCapture("/content/drive/MyDrive/"+file_name)
 
-frame_rate = cap.get(5)
+frame_rate = math.ceil(cap.get(5))
 
 frames = []
 
@@ -21,7 +22,7 @@ cv2.COLOR_BGR2RGB)
 
       if i%(20*frame_rate) == 0:
         #write file
-        imageio.mimsave("/content/drive/MyDrive/"+file_name[:-4]+str(j)+".mp4", frames, fps=frame_rate)
+        imageio.mimsave("/content/drive/MyDrive/"+file_name[:-4]++"_"+str(j)+".mp4", frames, fps=frame_rate)
         frames = []
         j=j+1
 
