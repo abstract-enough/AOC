@@ -22,7 +22,7 @@ cv2.COLOR_BGR2RGB)
 
       if i%(20*frame_rate) == 0:
         #write file
-        imageio.mimsave("/content/drive/MyDrive/"+file_name[:-4]++"_"+str(j)+".mp4", frames, fps=frame_rate)
+        imageio.mimsave("/content/drive/MyDrive/"+file_name[:-4]+"_"+str(j)+".mp4", frames, fps=frame_rate)
         frames = []
         j=j+1
 
